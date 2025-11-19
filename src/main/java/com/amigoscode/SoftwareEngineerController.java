@@ -17,7 +17,6 @@ public class SoftwareEngineerController {
     @GetMapping
     public List<SoftwareEngineer> getEngineers() {
         return softwareEngineerService.getAllSoftwareEngineers();
-
     }
 
     @PostMapping
@@ -25,6 +24,11 @@ public class SoftwareEngineerController {
             @RequestBody SoftwareEngineer softwareEngineer
     ) {
             softwareEngineerService.insertSoftwareEngineer(softwareEngineer);
+    }
+
+    @GetMapping("{id}")
+    public SoftwareEngineer getEngineers( @PathVariable Integer id) {
+        return softwareEngineerService.getAllSoftwareEngineerById(id);
     }
 }
 //                List.of ( we are updating this because this was to temporarily supposed to fill data
