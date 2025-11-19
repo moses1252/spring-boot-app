@@ -17,4 +17,9 @@ public class SoftwareEngineerService {
     public List<SoftwareEngineer> getAllSoftwareEngineers() {
         return softwareEngineerRepository.findAll();
     }
+
+    public void insertSoftwareEngineer(SoftwareEngineer softwareEngineer) {
+        softwareEngineerRepository.save(softwareEngineer);// we are not doing any validations or exception handling at all
+        //just implenting crud operation in the rawest form!
+    }
 }
